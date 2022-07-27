@@ -1,8 +1,8 @@
-const app = require('express')();
-const http = require('http').Server(app);
-const port = process.env.PORT || 3000;
+import psList from 'ps-list';
 
 
-http.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}/`);
-});
+const showProcesses = async () => {
+    console.log(await psList());
+}
+
+showProcesses()
